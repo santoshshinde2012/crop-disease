@@ -1,0 +1,28 @@
+# Docker Compose for local development
+# Usage:
+#   docker-compose up --build       (start API)
+#   docker-compose down             (stop)
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crop-disease-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount models directory so you can swap checkpoints without rebuilding
+      - ./models:/app/models:ro
+    environment:
+      - PYTHONUNBUFFERED=1
+      - LOG_LEVEL=info
+      - PORT=8000
+      - CORS_ORIGINS=*
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3

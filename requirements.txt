@@ -1,0 +1,29 @@
+torch>=2.0.0
+torchvision>=0.15.0
+torchmetrics>=1.0.0
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+Pillow>=9.5.0
+scikit-learn>=1.3.0
+tqdm>=4.65.0
+streamlit>=1.28.0
+plotly>=5.15.0
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Testing
+pytest>=7.0.0
+
+# API server (deployment)
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+httpx>=0.25.0
+
+# ONNX export (optional — install for deployment export pipeline)
+# Skipped by pytest automatically via importorskip when not installed.
+# onnx>=1.14.0
+# onnxscript>=0.1.0
+# onnxsim>=0.4.0

@@ -1,0 +1,41 @@
+# ---- Version control ----
+.git
+.gitignore
+
+# ---- Python ----
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+.mypy_cache
+.ruff_cache
+*.egg-info
+.venv
+venv
+
+# ---- Data (too large for container) ----
+data/
+PlantVillage Dataset/
+notebooks/
+*.ipynb
+
+# ---- IDE ----
+.vscode
+.idea
+
+# ---- Docker ----
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# ---- Docs / Wiki (keep README for pyproject.toml) ----
+wiki/
+*.md
+!README.md
+
+# ---- Tests (not needed in production image) ----
+tests/
+
+# ---- Misc ----
+*.log
+.DS_Store

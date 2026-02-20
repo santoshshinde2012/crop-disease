@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model files (large — use Git LFS to track specific checkpoints)
+# To track a checkpoint: git lfs track "models/efficientnet_b0_best.pth"
+*.pth
+*.h5
+*.pkl
+*.onnx
+*.tflite
+
+# But keep the models directory marker and JSON configs
+!models/.gitkeep
+!models/*.json
+
+# Data directories
+data/raw/
+data/processed/
+
+# Outputs (regenerated from notebook)
+outputs/*.png
+
+# Logs
+*.log

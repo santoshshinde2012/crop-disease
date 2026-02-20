@@ -1,0 +1,20 @@
+# render.yaml — Render Blueprint (Infrastructure as Code)
+# Deploy with: https://dashboard.render.com/blueprints/new
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: crop-disease-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: LOG_LEVEL
+        value: info
+      - key: CORS_ORIGINS
+        value: "*"
